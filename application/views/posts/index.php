@@ -18,12 +18,12 @@ require LAYOUT_PATH . 'header.php';
 
             <h3 class="mb-0">
                 <a class="text-dark"
-                   href="<?php echo base_url('index.php/posts/get') . '?id=' . $post['id']; ?>"><?php echo $post['title']; ?></a>
+                   href="<?php echo site_url('posts/') . $post['slug']; ?>"><?php echo $post['title']; ?></a>
             </h3>
             <div class="mb-1 text-muted"><?php echo $post['created_at']; ?></div>
             <p class="card-text mb-auto"><?php echo $post['body']; ?></p>
             <a class="btn btn-sm btn-outline-primary float-right"
-               href="<?php echo base_url('index.php/posts/get') . '?id=' . $post['id']; ?>">Continue reading</a>
+               href="<?php echo site_url('posts/') . $post['slug']; ?>">Continue reading</a>
         </div>
 
         <!--        todo add Thumbnail -->

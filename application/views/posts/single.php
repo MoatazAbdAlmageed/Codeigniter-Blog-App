@@ -11,7 +11,7 @@ require LAYOUT_PATH . 'header.php';
 
         <!--        todo add category -->
         <!--        <a class="badge badge-dark" href="-->
-        <?php //echo base_url( 'index.php/posts' ) . '?slug=' . $post['slug']; ?><!--">-->
+        <?php //echo site_url( '/posts' ) . '?slug=' . $post['slug']; ?><!--">-->
         <!--            <strong-->
         <!--                    class="d-inline-block mb-2 text-primary">-->
         <?php //echo $post['slug']; ?><!--</strong></a>-->

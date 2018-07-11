@@ -17,24 +17,19 @@ class Post extends CI_Model
         $this->load->database();
     }
 
-    public function get_all($slug = false)
+    public function get_all()
     {
 
         $this->db->order_by("id", "desc");
-
-
-        return $slug == false
-            ? $this->db->get('posts')->result_array()
-            : $this->db->get_where('posts', array('slug' => $slug))->result_array();
-
+        return $this->db->get('posts')->result_array();
 
     }
 
 
-    public function get_post($id)
+    public function get_post($slug)
     {
-
-        return $this->db->get_where('posts', array('id' => $id))->result_array()[0];
+        $this->db->order_by("id", "desc");
+        return $this->db->get_where('posts', array('slug' => $slug))->row_array();
 
     }
 
@@ -44,7 +39,7 @@ class Post extends CI_Model
         return $this->db->insert('posts', array(
             'title' => $this->input->post('title'),
             'body' => $this->input->post('body'),
-            'slug' => url_title($this->input->post('body')),
+            'slug' => url_title($this->input->post('title'), 'dash', true),
         ));
 
     }
