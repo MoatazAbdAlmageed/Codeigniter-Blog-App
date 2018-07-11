@@ -19,7 +19,7 @@ class Post extends CI_Model {
 		if ( ! $slug ) {
 			return $this->db->get( 'posts' )->result_array();
 		} else {
-			return $this->db->get_where( 'posts', array( 'slug' => $slug ) )->row_array();
+			return $this->db->get_where( 'posts', array( 'slug' => $slug ) )->result_array();
 		}
 
 	}

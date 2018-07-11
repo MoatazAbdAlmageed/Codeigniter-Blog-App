@@ -25,7 +25,11 @@ class Posts extends CI_Controller {
 	 */
 	public function index() {
 		$data['PAGE_TITLE'] = "Posts";
-		$data['posts']      = $this->post->get_all();
+
+		$slug          = $this->input->get( 'slug' );
+		$data['posts'] = $this->post->get_all( $slug );
 		$this->load->view( 'posts/index', $data );
 	}
+
+
 }
