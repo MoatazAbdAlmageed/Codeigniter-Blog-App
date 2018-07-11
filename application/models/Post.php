@@ -6,25 +6,48 @@
  * Time: 4:43 AM
  */
 
-class Post extends CI_Model {
-	/**
-	 * Post constructor.
-	 */
-	public function __construct() {
-		parent::__construct();
-		$this->load->database();
-	}
+class Post extends CI_Model
+{
+    /**
+     * Post constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->database();
+    }
 
-	public function get_all( $slug = false ) {
-		return $slug == false ? $this->db->get( 'posts' )->result_array() : $this->db->get_where( 'posts', array( 'slug' => $slug ) )->result_array();
+    public function get_all($slug = false)
+    {
 
-	}
+        $this->db->order_by("id", "desc");
 
 
-	public function get_post( $id ) {
+        return $slug == false
+            ? $this->db->get('posts')->result_array()
+            : $this->db->get_where('posts', array('slug' => $slug))->result_array();
 
-		return $this->db->get_where( 'posts', array( 'id' => $id ) )->result_array()[0];
 
-	}
+    }
+
+
+    public function get_post($id)
+    {
+
+        return $this->db->get_where('posts', array('id' => $id))->result_array()[0];
+
+    }
+
+
+    public function save_post()
+    {
+        return $this->db->insert('posts', array(
+            'title' => $this->input->post('title'),
+            'body' => $this->input->post('body'),
+            'slug' => url_title($this->input->post('body')),
+        ));
+
+    }
+
 
 }
