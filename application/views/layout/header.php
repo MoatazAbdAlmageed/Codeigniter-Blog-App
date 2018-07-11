@@ -4,7 +4,7 @@ defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Blog</title>
+    <title>Moataz's blog</title>
     <!--    <link rel="stylesheet" href="-->
 	<?php //echo base_url('assets/bootstrap/dist/css/bootstrap.css'); ?><!--">-->
     <link rel="stylesheet" href="<?php echo base_url( "node_modules/bootstrap/dist/css/bootstrap.min.css" ); ?>"/>
