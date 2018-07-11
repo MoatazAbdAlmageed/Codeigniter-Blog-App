@@ -14,11 +14,12 @@ require LAYOUT_PATH . 'header.php';
                         class="d-inline-block mb-2 text-primary"><?php echo $post['slug']; ?></strong></a>
 
             <h3 class="mb-0">
-                <a class="text-dark" href="#"><?php echo $post['title']; ?></a>
+                <a class="text-dark"
+                   href="<?php echo base_url( 'index.php/posts/get' ) . '?id=' . $post['id']; ?>"><?php echo $post['title']; ?></a>
             </h3>
             <div class="mb-1 text-muted"><?php echo $post['created_at']; ?></div>
             <p class="card-text mb-auto"><?php echo $post['body']; ?></p>
-            <a href="#">Continue reading</a>
+            <a href="<?php echo base_url( 'index.php/posts/get' ) . '?id=' . $post['id']; ?>">Continue reading</a>
         </div>
         <img class="card-img-right flex-auto d-none d-lg-block" data-src="holder.js/200x250?theme=thumb"
              alt="Thumbnail [200x250]" style="width: 200px; height: 250px;"

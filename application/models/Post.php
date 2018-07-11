@@ -16,11 +16,14 @@ class Post extends CI_Model {
 	}
 
 	public function get_all( $slug = false ) {
-		if ( ! $slug ) {
-			return $this->db->get( 'posts' )->result_array();
-		} else {
-			return $this->db->get_where( 'posts', array( 'slug' => $slug ) )->result_array();
-		}
+		return $slug == false ? $this->db->get( 'posts' )->result_array() : $this->db->get_where( 'posts', array( 'slug' => $slug ) )->result_array();
+
+	}
+
+
+	public function get_post( $id ) {
+
+		return $this->db->get_where( 'posts', array( 'id' => $id ) )->result_array()[0];
 
 	}
 
