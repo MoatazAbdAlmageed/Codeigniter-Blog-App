@@ -8,9 +8,13 @@ require LAYOUT_PATH . 'header.php';
             <!--            by <a href="#">Mark</a>-->
         </p>
         <p><?php echo $post['body']; ?></p>
-        <a class="badge badge-dark" href="<?php echo base_url( 'index.php/posts' ) . '?slug=' . $post['slug']; ?>">
-            <strong
-                    class="d-inline-block mb-2 text-primary"><?php echo $post['slug']; ?></strong></a>
+
+        <!--        todo add category -->
+        <!--        <a class="badge badge-dark" href="-->
+        <?php //echo base_url( 'index.php/posts' ) . '?slug=' . $post['slug']; ?><!--">-->
+        <!--            <strong-->
+        <!--                    class="d-inline-block mb-2 text-primary">-->
+        <?php //echo $post['slug']; ?><!--</strong></a>-->
     </div>
 <?php
 
